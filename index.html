@@ -1,0 +1,8 @@
+<body onload='a=new AudioContext(); s=4096; p=a.createScriptProcessor(s,0,1); p.connect(a.destination)
+t="9Vs*"; T="0000909090a0a0a0"; r="7020503010904020"
+c=4; x="length";l=t[x];L=T[x];B=r[x];X="charCodeAt"
+p.onaudioprocess=function(e){
+  b=e.outputBuffer.getChannelData(0); A=[]
+  for(i=s;i--;)A[i]=(((i/((128*s)/(T[X](c%L)*t[X](i%l))))%1)-.5)*(1-(i/s))*(0.1*r[c%B])*((72-(c%64)+8)/72);
+  c++;b.set(A)
+}'>
